@@ -1,0 +1,10 @@
+	
+The following files may be modified,
+1. threads/main.*, kernel.* , threads.*, scheduler.*, alarm.*
+2. machine/interrupt.* timer.* stats.*
+
+Remember it's only a hint, you can still modified any file under code/ directory.
+
+在填process進waiting queue的時候，除了os本身和user program外，
+還會有一個postal worker(負責network msg接收/傳送)，為了避免影響到scheduling結果，
+可以直接把postal worker的priority設成149(max priority)，讓他在一開始的時候就先執行掉。
